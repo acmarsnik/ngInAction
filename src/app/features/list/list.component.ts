@@ -8,22 +8,18 @@ import {Observable} from 'rxjs/Observable';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  @Input() user: User;
   @Output() select: EventEmitter<User> = new EventEmitter<User>();
-  public users: Observable<User[]>;
-
   private selected: User;
 
-  constructor(private userService: UserService) {
+  constructor() {
   }
 
   ngOnInit() {
-    this.users = this.userService.list();
   }
 
   toggleUser(user: User) {
     let newUser = user;
-    if (this.selected === user) {
+    if (this.selected && this.selected.name === user.name) {
       newUser = null;
     }
     this.select.emit(newUser);
