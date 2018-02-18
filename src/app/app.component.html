@@ -1,7 +1,6 @@
 <header *ngIf="false">
   <mat-toolbar color="primary" class="navigation">
     <mat-toolbar-row>
-      <button mat-button routerLink="/profile" mat-list-item>Profile</button>
       <button mat-button routerLink="/main" mat-list-item>Main</button>
       <button mat-button routerLink="/chat" mat-list-item>Chat</button>
       <button mat-button routerLink="/list" mat-list-item>List</button>
@@ -15,7 +14,6 @@
   <tim-nav-bar>
     <tim-logo routerLink="/" ></tim-logo>
     <tim-nav-item-group *ngIf="user$|async">
-      <tim-nav-item routerLink="/profile" routerLinkActive="active" title="Profile"></tim-nav-item>
       <!--<tim-nav-item routerLink="/main" routerLinkActive="active" title="Main"></tim-nav-item>-->
       <tim-nav-item routerLink="/chat" routerLinkActive="active" title="Chat"></tim-nav-item>
       <app-user></app-user>
