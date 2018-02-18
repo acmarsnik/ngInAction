@@ -1,3 +1,4 @@
+import { MOCK_USERS } from './../../services/user/user.mock';
 import {UserService, User} from './../../services/user/user.service';
 import {Component, OnInit, EventEmitter, Output, Input} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
@@ -11,7 +12,10 @@ export class ListComponent implements OnInit {
   @Output() select: EventEmitter<User> = new EventEmitter<User>();
   private selected: User;
 
+  public users: User[];
+
   constructor() {
+    this.users = MOCK_USERS;
   }
 
   ngOnInit() {
