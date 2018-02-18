@@ -44,16 +44,6 @@ export class UserService {
       .do((_) => this.set(user));
   }
 
-  public add(user: User): Observable<any> {
-    return this.http
-      .post(USER_ENDPOINT, user, httpOptions)
-      .do((_) => this.set(user));
-  }
-
-  public list(): Observable<User[]> {
-    return this.http.get<User[]>(USER_ENDPOINT);
-  }
-
   public user(): Observable<User> {
     return this.user$.asObservable();
   }

@@ -16,25 +16,8 @@ export class LoginComponent {
               public snackBar: MatSnackBar) {
   }
 
-  register() {
-    const user: User = {name: this.name};
-    this.user.add(user)
-      .subscribe(
-        (response) => this.navigate(),
-        (error) => {
-          this.showError(`User ${this.name} exists already!!`);
-          this.name = null;
-        });
-  }
-
   login(user: User) {
     this.user.set(user);
-    this.navigate();
-  }
-
-  update(user: User) {
-    const newUser: User = {...user, firstName: 'John', lastName: 'Doe'};
-    this.user.update(newUser).subscribe( (hallo) => console.log('result of the update', hallo) , (error) => console.error(error));
     this.navigate();
   }
 
