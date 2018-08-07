@@ -1,9 +1,8 @@
-import {Observable} from 'rxjs/Observable';
 import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firestore';
+import {Observable, BehaviorSubject, Subject} from 'rxjs';
+import {tap} from 'rxjs/operators';
 import {Injectable} from '@angular/core';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-import {Subject} from 'rxjs/Subject';
-import 'rxjs/add/operator/do';
+
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 export interface User {
@@ -41,7 +40,7 @@ export class UserService {
 
     return this.http
       .patch(`${USER_ENDPOINT}${user.id}`, newUser, httpOptions)
-      .do((_) => this.set(user));
+      .pipe(tap((_) => this.set(user)));
   }
 
   public user(): Observable<User> {
