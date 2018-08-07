@@ -10,7 +10,7 @@ import {Observable} from 'rxjs';
 })
 export class ListComponent implements OnInit {
   @Output() select: EventEmitter<User> = new EventEmitter<User>();
-  private selected: User;
+  public selected: User;
 
   public users: User[];
 
