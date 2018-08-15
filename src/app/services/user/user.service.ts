@@ -20,7 +20,9 @@ const httpOptions = {
   })
 };
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class UserService {
   private collection: AngularFirestoreCollection<User>;
   // private user$: Subject<User> = new BehaviorSubject<User>({name: 'No user'});

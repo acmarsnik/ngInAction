@@ -9,10 +9,10 @@ import {AppRoutingModule} from './app-routing.module';
 
 import {AppComponent} from './app.component';
 import {FeaturesModule} from './features/features.module';
-import {ServicesModule} from './services/services.module';
 
 import {AngularFireModule} from 'angularfire2';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,13 +24,10 @@ import {AngularFirestoreModule} from 'angularfire2/firestore';
     AppRoutingModule,
     FeaturesModule,
     MatToolbarModule,
-    ServicesModule,
     ComponentsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
-  ],
-  providers: [
-    HasUserGuard
+    AngularFirestoreModule,
+    HttpClientModule
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
