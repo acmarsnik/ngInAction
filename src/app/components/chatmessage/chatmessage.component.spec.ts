@@ -30,19 +30,11 @@ describe('ChatmessageComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have a sent class', () => {
-    component.current = {name: 'ABC'};
-    fixture.detectChanges();
-    const sent = getSentCssClass(fixture);
-
-    expect(sent).not.toBe(null);
+  it('should have a sent class if sender is the user', () => {
+    expect(false).toBe(true);
   });
 
-  it('should have a not sent class', () => {
-    component.current = {name: 'NOTABC'};
-    fixture.detectChanges();
-    const sent = getSentCssClass(fixture);
-
-    expect(sent).toBe(null);
+  it('should not have a sent class if sender is someone else', () => {
+    expect(false).toBe(true);
   });
 });
