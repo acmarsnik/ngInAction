@@ -1,0 +1,3 @@
+<mat-list-item [class.selected]="selected?.name === user.name" (click)="sendUser()">
+  <app-avatar [name]="user.name"></app-avatar> {{user.name}}
+</mat-list-item>

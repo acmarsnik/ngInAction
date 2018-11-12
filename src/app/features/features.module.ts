@@ -6,6 +6,7 @@ import {ListModule} from './list/list.module';
 import {ChatModule} from './chat/chat.module';
 import {LoginModule} from './login/login.module';
 import {MatCardModule} from '@angular/material';
+import { ProfileModule } from './profile/profile.module';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import {MatCardModule} from '@angular/material';
     ListModule,
     ChatModule,
     LoginModule,
-    ComponentsModule
+    ComponentsModule,
+    ProfileModule
   ]
 })
 export class FeaturesModule { }

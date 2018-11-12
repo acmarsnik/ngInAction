@@ -1,0 +1,36 @@
+.profile {
+    display: flex;
+
+    .profile-content{
+      display: flex;
+      flex-direction: row;
+
+      .profile-users{
+        width: 20%;
+        padding-right: 2rem;
+      }
+
+      .current-profile{
+        flex: 2;
+      }
+
+      .chat-message{
+        display: flex;
+
+        mat-form-field{
+          flex: 2;
+        }
+
+        button{
+          margin-left: 3rem;
+          align-self: center;
+        }
+      }
+    }
+
+}
+
+.title {
+    font-weight: bold;
+    font-size: 120%;
+}

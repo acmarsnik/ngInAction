@@ -4,6 +4,7 @@ import {tap} from 'rxjs/operators';
 import {Injectable} from '@angular/core';
 
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { MOCK_USERS } from './user.mock';
 
 export interface User {
   id?: string;
@@ -47,6 +48,10 @@ export class UserService {
 
   public user(): Observable<User> {
     return this.user$.asObservable();
+  }
+
+  public getUsers(){
+    return MOCK_USERS;
   }
 
 }

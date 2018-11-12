@@ -5,6 +5,8 @@ import {ListRoutingModule} from './list-routing.module';
 import {ListComponent} from './list.component';
 import {MatListModule} from '@angular/material';
 import {ComponentsModule} from '../../components/components.module';
+import { ListItemComponent } from '../../components/list-item/list-item.component';
+import { FilterUserPipe } from '../../filter-user.pipe';
 
 @NgModule({
   imports: [
@@ -14,7 +16,7 @@ import {ComponentsModule} from '../../components/components.module';
     ComponentsModule
   ],
   declarations: [
-    ListComponent],
+    ListComponent, ListItemComponent, FilterUserPipe],
   exports: [ListComponent]
 })
 export class ListModule {

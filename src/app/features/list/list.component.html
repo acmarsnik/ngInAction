@@ -1,5 +1,4 @@
-<mat-nav-list>
-  <mat-list-item [class.selected]="selected?.name === 'Rose'" (click)="toggleUser({name: 'Rose'})">
-    <app-avatar name="Rose"></app-avatar>Rose
-  </mat-list-item>
+<mat-nav-list *ngFor="let user of users | filterUser:currentUser;">
+  <app-list-item [user]="user" [selected]="selected" (userOutput)="toggleUser($event)" [class.selected]="selected?.name === user.name">
+  </app-list-item>
 </mat-nav-list>

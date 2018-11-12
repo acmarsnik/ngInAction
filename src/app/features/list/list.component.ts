@@ -1,7 +1,8 @@
 import { MOCK_USERS } from './../../services/user/user.mock';
-import {UserService, User} from './../../services/user/user.service';
-import {Component, OnInit, EventEmitter, Output, Input} from '@angular/core';
-import {Observable} from 'rxjs';
+import { UserService, User } from './../../services/user/user.service';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { Observable } from 'rxjs';
+import { FilterUserPipe } from '../../filter-user.pipe';
 
 @Component({
   selector: 'app-list',
@@ -10,12 +11,13 @@ import {Observable} from 'rxjs';
 })
 export class ListComponent implements OnInit {
   @Output() select: EventEmitter<User> = new EventEmitter<User>();
+  @Input() currentUser: User;
   public selected: User;
 
   public users: User[];
 
-  constructor() {
-    this.users = MOCK_USERS;
+  constructor(userService: UserService) {
+    this.users = userService.getUsers();
   }
 
   ngOnInit() {
@@ -28,5 +30,10 @@ export class ListComponent implements OnInit {
     }
     this.select.emit(newUser);
     this.selected = newUser;
+    this.selectOutput();
+  }
+
+  selectOutput() {
+    this.select.emit(this.selected);
   }
 }
